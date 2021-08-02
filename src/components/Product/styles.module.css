@@ -1,0 +1,38 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
+  background-color: var(--whiteColor);
+  border-radius: 5px;
+  padding: 0.9rem;
+  width: 35rem;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.price {
+  background-color: var(--blackColor);
+  color: var(--whiteColor);
+  padding: 0.4rem 1.3rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.details {
+  font-size: 0.9rem;
+}
+
+.btn {
+  grid-area: 3/2 / span 1;
+
+  padding: 0.7rem 1.3rem;
+  border: 1px solid var(--blueColor);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--blueColor);
+  cursor: pointer;
+}

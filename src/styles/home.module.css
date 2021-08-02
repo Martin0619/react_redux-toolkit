@@ -1,0 +1,5 @@
+.buyProuctsHeading {
+  text-transform: uppercase;
+  color: var(--whiteColor);
+  letter-spacing: 2.5px;
+}
