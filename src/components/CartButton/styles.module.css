@@ -1,0 +1,22 @@
+.btn {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 1rem;
+  align-items: center;
+
+  width: max-content;
+  background-color: transparent;
+  border: 1px solid var(--greenColor);
+  color: var(--greenColor);
+  padding: 0.7rem 1.7rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn > .quantity {
+  background-color: var(--greenColor);
+  font-size: 1.15rem;
+  color: initial;
+  padding: 0.2rem 1.3rem;
+  border-radius: 20px;
+  font-weight: 300;
+}

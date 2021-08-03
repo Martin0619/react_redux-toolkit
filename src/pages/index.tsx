@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import CartPeekBox from "../components/CartPeekBox";
-
-import Product from "../components/Product";
+import ProductList from "../components/ProductList";
 import styles from "../styles/home.module.css";
 
 const HomePage: NextPage = () => {
@@ -9,7 +8,7 @@ const HomePage: NextPage = () => {
     <>
       <CartPeekBox />
       <h3 className={styles.buyProuctsHeading}>buy your favorite products</h3>
-      <Product />
+      <ProductList />
     </>
   );
 };

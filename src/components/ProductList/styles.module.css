@@ -1,0 +1,7 @@
+.loading {
+  color: var(--greenColor);
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
