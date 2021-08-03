@@ -1,0 +1,14 @@
+.wrapper {
+  display: grid;
+  row-gap: 0.7rem;
+}
+
+.empty {
+  background-color: var(--greyColor-light);
+  border-radius: 3px;
+  color: var(--whiteColor);
+  width: 25rem;
+  padding: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
