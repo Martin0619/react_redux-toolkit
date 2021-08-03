@@ -1,16 +1,22 @@
 import { FunctionComponent } from "react";
 import { cartActions } from "../../redux/cart.slice";
-import { useAppDispatch } from "../../redux/store";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 import { ProductType } from "../../redux/ui.slice";
 
 import styles from "./styles.module.css";
 
-const Product: FunctionComponent<ProductType> = (props) => {
-  const { name, price, details } = props;
+export interface ProductComponentType {
+  id: string;
+}
+
+const Product: FunctionComponent<ProductComponentType> = (props) => {
+  const { name, details, price, id } = useAppSelector(
+    (state) => state.uiReducer.products[props.id]
+  );
   const dispatch = useAppDispatch();
 
   const addProductToCartHandler = () => {
-    dispatch(cartActions.addProductToCart({ ...props }));
+    dispatch(cartActions.addProductToCart({ id, name, price, details }));
   };
 
   return (

@@ -3,14 +3,23 @@ import { FunctionComponent } from "react";
 import styles from "./styles.module.css";
 
 import CartProductList from "../CartProductList";
+import { useAppSelector } from "../../redux/store";
 
 const CartPeekBox: FunctionComponent = () => {
-  return (
-    <div className={styles.wrapper}>
-      <h4 className={styles.heading}>Your Shopping Cart</h4>
+  const shouldDisplay = useAppSelector(
+    (state) => state.uiReducer.isCartPeekBoxVisible
+  );
 
-      <CartProductList />
-    </div>
+  return (
+    <>
+      {shouldDisplay && (
+        <div className={styles.wrapper}>
+          <h4 className={styles.heading}>Your Shopping Cart</h4>
+
+          <CartProductList />
+        </div>
+      )}
+    </>
   );
 };
 

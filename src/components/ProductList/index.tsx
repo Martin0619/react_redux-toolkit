@@ -6,8 +6,8 @@ import styles from "./styles.module.css";
 
 const ProductList: FunctionComponent = () => {
   const dispatch = useAppDispatch();
-  const { areProductsLoading, products } = useAppSelector((state) => ({
-    products: state.uiReducer.products,
+  const { areProductsLoading, productIds } = useAppSelector((state) => ({
+    productIds: state.uiReducer.productIds,
     areProductsLoading: state.uiReducer.areProductsLoading,
   }));
 
@@ -20,7 +20,9 @@ const ProductList: FunctionComponent = () => {
       {areProductsLoading ? (
         <h2 className={styles.loading}>loading</h2>
       ) : (
-        products.map((p) => <Product key={p.id} {...p} />)
+        productIds.map((productId) => (
+          <Product key={productId} id={productId} />
+        ))
       )}
     </>
   );

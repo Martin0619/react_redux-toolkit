@@ -9,13 +9,15 @@ export interface ProductType {
 
 export interface UiSliceStateType {
   isCartPeekBoxVisible: boolean;
-  products: ProductType[];
+  products: { [id: string]: ProductType };
+  productIds: string[];
   areProductsLoading: boolean;
 }
 
 const initialState: UiSliceStateType = {
   isCartPeekBoxVisible: false,
-  products: [],
+  products: {},
+  productIds: [],
   areProductsLoading: true,
 };
 
@@ -49,7 +51,10 @@ const uiSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getProducts.fulfilled, (state, { payload: products }) => {
       state.areProductsLoading = false;
-      state.products.push(...products);
+      products.forEach((p) => {
+        state.products[p.id] = p;
+        state.productIds.push(p.id);
+      });
     });
   },
 });
